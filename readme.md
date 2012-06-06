@@ -1,7 +1,7 @@
 # Line In Typography
 
-Version: 0.2.1
-Stable tag: 0.2.0
+* Version: 0.2.1
+* Stable tag: 0.2.0
 
 This magical piece of markup monkery will make your mission to muster magnificent missives on your monitor much more manageable.
 

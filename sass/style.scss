@@ -1,11 +1,50 @@
 $lineHeight: 1.5;
 $lineHeightEm: $lineHeight * 1em;
+$base-font-size: 16px;
+$base-line-height: $base-font-size * $lineHeight;
 
 @import "octopus/reset";
+@import "compass/typography";
 
 #wrap {
-	font-size: 0.875em; /* Default 16px in browser */ 
+	font-size: 1em; /* Default 16px in browser */ 
 	line-height: 1.5;
 	margin: 0 auto;
 	width: 80%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+h1 {
+	@include adjust-font-size-to(68px);
+	// Absolute units for finer control
+	margin-top: $base-font-size * $lineHeight;
+	margin-bottom: ( $base-font-size * $lineHeight ) * 2;
+}
+h2 {
+	@include adjust-font-size-to(42px);	
+	margin-top: ( $base-font-size * $lineHeight ) * 2;
+	margin-bottom: $base-font-size * $lineHeight;
+
+}
+h3 {
+	@include adjust-font-size-to(24px);		
+	margin-bottom: $base-font-size * $lineHeight;
+}
+h4, h5, h6 {
+	@include adjust-font-size-to(16px);
+	@include trailer();
+}
+
+.octopus-input {
+	min-height: 3 * $lineHeightEm;
+	margin: 0;
+}
+.octopus-textarea {
+	min-height: 4 * $lineHeightEm;
+	margin: 0;
 }
