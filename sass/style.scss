@@ -1,0 +1,11 @@
+$lineHeight: 1.5;
+$lineHeightEm: $lineHeight * 1em;
+
+@import "octopus/reset";
+
+#wrap {
+	font-size: 0.875em; /* Default 16px in browser */ 
+	line-height: 1.5;
+	margin: 0 auto;
+	width: 80%;
+}
