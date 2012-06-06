@@ -9,13 +9,9 @@ This magical piece of markup monkery will make your mission to muster magnificen
 
 "You know, for grids." #obscurefilmreferences
 
-This plugin allows you to overlay a 12 or 16 column fluid grid to check your positioning when developing fluid or responsive sites.
-
-It also assists you by overlaying lines based on your theme's line height so that you can correctly set your vertical rhythm and line up all of your typography to a baseline grid like the titan of typography that I'm certain you are. 
+This plugin allows display lines based on your theme's line height so that you can correctly set your vertical rhythm and line up all of your typography to a baseline grid like the titan of typography that I'm certain you are. 
 
 One should be aware that this is a plugin primarily promoted to pixel pushers and isn't for production use. You would do well to know quite a bit about CSS and you should know how your theme is laid out in the HTMLs before using this plugin. 
-
-Much to my deep sorrow, it is but a certainty that this fine piece of positional plugin prowess won't work with IE 8 and below (but, surely, one would not be so foolish as to create sites using IE as a development browser) as it requires the magnificent `background-size: 100%` CSS3 property to be present. Which in IE, to my great distress, it's not.
 
 == To Do ==
 
