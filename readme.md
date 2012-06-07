@@ -39,3 +39,5 @@ Check out `index.html` for more configuration options and to see it in action.
 * Adding default styling
 
 ### 0.2.1
+* Added support for a 12 column, pure CSS grid
+* Fixing issue with grids and lines not playing nice
