@@ -13,6 +13,7 @@ This plugin allows display lines based on your theme's line height so that you c
 
 One should be aware that this is a plugin primarily promoted to pixel pushers and isn't for production use. You would do well to know quite a bit about CSS and you should know how your theme is laid out in the HTMLs before using this plugin. 
 
+
 ## Usage
 
 Just dump the jquery.lineintypography.min.js file in your js/ folder, link to it in your HTML and then attach it to your root element like so:
