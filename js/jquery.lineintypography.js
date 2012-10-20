@@ -7,6 +7,7 @@
  *
  */
 
+
 (function($) {
 	"use strict";
 	// Create the control panel. This should only be fired once.

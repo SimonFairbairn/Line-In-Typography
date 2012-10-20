@@ -29,10 +29,7 @@
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 	<link rel="dns-prefetch" href="//ajax.googleapis.com" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr.min.js"></script>
+
 
 
 </head>
@@ -41,33 +38,15 @@
 	<div id="wrap">
     <header>
 		<h1>Line In Typography</h1>
-		<h2>An Example Page</h2>
     </header>
     <div id="main" role="main">
 
-    	<h1>Javascript</h1>
+    	<h3>Javascript</h3>
+    	It's as easy as:
 <pre><code>
-/*
- *  Variables:
- *
- *  containers are what the plugin is attached to
- *
- *  fontSizeContainer (default: body): 	Whichever element explicitly declares the font size and
- *					Line Height (#wrap in this example)
- *  backgroundOffset (default: 0):	Just in case you need to offset the lines
- *
- */
-jQuery(document).ready(function($) {
-	var myOptions = {   
-		lineHeightContainer : 'body',
-		gridState           : 'on',
-		lineState           : 'off',
-		testHtml            : "&lt;p&gt;My Paragraph Test&lt;/p&gt;",
-		backgroundOffset    : -20
-	};
-	$( '#wrap' ).LineInTypography(myOptions);
-});</code></pre>
-		<h1>CSS</h1>
+	$( 'body' ).LineInTypography(myOptions);</code></pre>
+		
+	<h3>CSS</h3>
 
 		The above settings would work well on a document that had the following CSS:
 
@@ -414,7 +393,7 @@ body {
   <script src="js/libs/jquery.min.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
-	<script src="js/jquery.lineintypography2.js"></script>
+	<script src="js/jquery.lineintypography.min.js"></script>
   <!-- end scripts-->
     <script>
     jQuery(document).ready(function($) {
