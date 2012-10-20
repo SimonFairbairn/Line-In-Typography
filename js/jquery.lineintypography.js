@@ -28,18 +28,21 @@
 		verticalRhythm.id = "litLines";
 		verticalRhythm.bgPos = opts.backgroundOffset;
 		verticalRhythm.inputId = "litChangeLineHeight";
+		verticalRhythm.stripe1 = "rgba(255,255,255,0.2)";
+		verticalRhythm.stripe2 = "rgba(0,0,0,0.1)";
+
 		verticalRhythm.changeLineHeight = function( lineHeight ) {
 			$('.litLines').css({"-webkit-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
 
 			$('.litLines').css({"-moz-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
 			$('.litLines').css({"-o-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
 			$('.litLines').css({"background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
-			$('.litLines').css({"background-image" : "-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #ffffff), color-stop(50%, #dddddd))"});
-			$('.litLines').css({"background-image" : " -webkit-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : "-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, " + verticalRhythm.stripe1 + "), color-stop(50%, " + verticalRhythm.stripe2 + "))"});
+			$('.litLines').css({"background-image" : " -webkit-linear-gradient(50% 0%, " + verticalRhythm.stripe1 + " 50%, " + verticalRhythm.stripe2 + " 50%)"});
 			$('.litLines').css({"background-image" : " -moz-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
-			$('.litLines').css({"background-image" : "-o-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
-			$('.litLines').css({"background-image" : "-ms-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
-			$('.litLines').css({"background-image" : "linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : "-o-linear-gradient(50% 0%, " + verticalRhythm.stripe1 + " 50%, " + verticalRhythm.stripe2 + " 50%)"});
+			$('.litLines').css({"background-image" : "-ms-linear-gradient(50% 0%, " + verticalRhythm.stripe1 + " 50%, " + verticalRhythm.stripe2 + " 50%)"});
+			$('.litLines').css({"background-image" : "linear-gradient(50% 0%, " + verticalRhythm.stripe1 + " 50%, " + verticalRhythm.stripe2 + " 50%)"});
 			$('.litLines').css({"background-position" : "0 " + verticalRhythm.bgPos + "px"});			
 		}
 
@@ -57,7 +60,7 @@
 		var buttonControls = $('<div />')
 								.addClass('lit-controls');
 
-		var up = addButton('Up', 'litButtonUp');
+		var up = addButton('▲', 'litButtonUp');
 		up.click( function() {
 			verticalRhythm.bgPos = verticalRhythm.bgPos - 1;
 			$('.'  + verticalRhythm.id).css(
@@ -65,7 +68,7 @@
 			);
 			return false;
 		});
-		var down = addButton('Down', 'litButtonDown');
+		var down = addButton('▼', 'litButtonDown');
 		down.click( function() {
 			verticalRhythm.bgPos = verticalRhythm.bgPos + 1;
 			$('.'  + verticalRhythm.id).css(
@@ -95,15 +98,20 @@
 			.attr('type', 'number')
 			.attr('name', verticalRhythm.inputId)
 			.attr('id', verticalRhythm.inputId)
+			.attr('style', 'max-width: 60px; background: #FAE6E8; border-radius: 5px; border: 1px solid #8E094A; box-shadow: inset 1px 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.4); padding: 2px 6px; color: #8E094A; font-weight: bold; text-align: center; font-size: 18px; ')
 			.val(opts.lineHeight)
 			.blur(function() {
 				verticalRhythm.changeLineHeight($(this).val());	
 			})
 			.keypress( function(e) {
-				if ( e.which == 13 ) {
-					verticalRhythm.changeLineHeight($(this).val());	
-					return false;
+				if ( !$('#litButtonOn').hasClass('off' ) ) {
+					if ( e.which == 13 ) {
+						verticalRhythm.changeLineHeight($(this).val());	
+						return false;		
+					}
 				}
+				
+
 			});
 
 
@@ -137,10 +145,33 @@
 			loadButtons(opts);
 			var string	=	"<style>";
 			string		+=	"#lit-buttons {";
-			string		+=		"position: fixed; top: 50px; right: 0; z-index: 200; background: #fff; padding: 15px;";
-			string		+=		"border: 1px solid #000; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; ";
-			string		+=		"width: 200px;";
+			string		+=		"font-family: 'Helvetica', sans-serif; position: fixed; top: 50px; right: 0; z-index: 200; background: #F7B8D3; padding: 15px;";
+			string		+=		"border: 1px solid #8E094A; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.4);";
+			string		+=		"width: 130px;";
 			string		+=	"}";
+			string		+=	"#litButtonOn,#litButtonUp,#litButtonDown {";
+			string		+= 		"text-decoration: none; color: #8E094A; text-shadow: 0 1px 0 rgba(255,255,255,0.4)";
+			string		+=	"}";
+			string		+=	"#litButtonOn:hover,#litButtonUp:hover,#litButtonDown:hover {";
+			string		+= 		"color: #C73C73;";
+			string		+=	"}";
+			string		+=	"#litButtonOn:active,#litButtonUp:active,#litButtonDown:active {";
+			string		+= 		"color: #C73C73; text-shadow: none;";
+			string		+=	"}";
+
+			string		+=	"#litButtonOn {";
+			string		+=	"margin-right: 10px; width: 15px; display: inline-block; text-align: center";
+			string		+=	"}";
+			string		+=	"#litButtonUp,#litButtonDown {";
+			string		+=		"position: absolute; text-shadow: 0 1px 3px rgba(0,0,0,0.3); ";
+			string		+=	"}";
+			string		+=	"#litButtonUp {";
+			string		+=		"top: 5px;";
+			string		+=	"}";
+			string		+=	"#litButtonDown {";
+			string		+=		"bottom: 0px;";
+			string		+=	"}";
+
 			string		+=	".switchImages embed, .switchImages img, .switchImages object, .switchImages video, .switchImages iframe  {";
 			string		+=		"display: none !important;";
 			string		+=	"}";
