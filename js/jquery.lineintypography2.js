@@ -136,7 +136,7 @@
 			string		+=	"#lit-buttons {";
 			string		+=		"position: fixed; top: 50px; right: 0; z-index: 200; background: #fff; padding: 15px;";
 			string		+=		"border: 1px solid #000; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; ";
-			string		+=		"width: 400px;";
+			string		+=		"width: 200px;";
 			string		+=	"}";
 			string		+=	".switchImages embed, .switchImages img, .switchImages object, .switchImages video, .switchImages iframe  {";
 			string		+=		"display: none !important;";
