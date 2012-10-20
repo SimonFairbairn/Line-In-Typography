@@ -9,157 +9,7 @@
 
 (function($) {
 	"use strict";
-	function changeLineHeight(object) {
-		var $this = $(object);
-		$('.columns').each( function() {
-			$(this)
-				.removeClass('gr960-12')
-				.removeClass('gr960-16');
-		});
-		$('.columns').each( function() {
-			$(this).addClass('gr960-' + $this.val() );
-		});
-		$('#lit-switch-grid').addClass('on');
-	}
-
 	// Create the control panel. This should only be fired once.
-	function loadButtons(opts) {
-		var buttonDiv = $('<div />')
-							.attr('id', 'lit-buttons');
-		var hideLink = $('<a />')
-							.attr('href', '#lit-hide')
-							.addClass('lit-hide')
-							.text('Hide')
-							.click( function() {
-								var thisText, currentText;
-								if ( $(this).hasClass('show') ) {
-									thisText = 'hide';
-									currentText = 'show';
-									$('#lit-buttons').animate({width: 400}, 500);
-									$('.lit-controls').show();
-								} else {
-									thisText = 'show';
-									currentText = 'hide';
-
-									$('#lit-buttons').animate({width: 25}, 500);
-									$('.lit-controls').hide();
-								}
-								$(this).text(thisText).removeClass(currentText).addClass(thisText);
-								return false;
-							});
-		var buttonControls = $('<div />')
-								.addClass('lit-controls');
-
-		var buttonImages = $('<input />')
-								.attr('type', 'button')
-								.attr('name','lit-switch-images')
-								.attr('id', 'lit-switch-images')
-								.val('Toggle Images')
-								.click( function() {
-									if ( $(this).hasClass('on') ) {
-										$(this).removeClass('on');
-										$(opts.lineHeightContainer).removeClass('switchImages');
-									} else {
-										$(this).addClass('on');
-										$(opts.lineHeightContainer).addClass('switchImages');
-									}
-								});
-		var buttonLines = $('<input />')
-								.attr('type', 'button')
-								.attr('name','lit-switch-lines')
-								.attr('id', 'lit-switch-lines')
-								.val('Toggle Lines')
-								.click( function() {
-									$('#lit-vertical-rhythm').toggle();
-									$('.test-p').toggle();
-									$(opts.selector).toggleClass('litLines');
-								});
-		var buttonGrid = $('<input />')
-								.attr('type', 'button')
-								.attr('name','lit-switch-grid')
-								.attr('id', 'lit-switch-grid')
-								.val('Toggle Grid')
-								.click( function() {
-									if ( $(this).hasClass('on') ) {
-										$(this).removeClass('on');
-										$(opts.gridContainer).each( function() {
-											$(this).removeClass('gr960-12').removeClass('gr960-16');
-										});
-									} else {
-										$(this).addClass('on');
-
-										$(opts.gridContainer).each( function() {
-											$(this).addClass('gr960-' + $('.line-height:checked').val() );
-										});
-									}
-
-								});
-		var labelRadio12 = $('<label>')
-								.attr('for', 'lit-960-12')
-								.text('12 column grid');
-		var buttonRadio12 = $('<input />')
-								.attr('type', 'radio')
-								.attr('name','lit-960')
-								.attr('id', 'lit-960-12')
-								.val('12')
-								.addClass('line-height')
-								.click(function() {changeLineHeight(this);});
-
-		var labelRadio16 = $('<label>')
-								.attr('for', 'lit-960-16')
-								.text('16 column grid');
-
-		var buttonRadio16 = $('<input />')
-								.attr('type', 'radio')
-								.attr('name','lit-960')
-								.attr('id', 'lit-960-16')
-								.val('16')
-								.addClass('line-height')
-								.click(function() {changeLineHeight(this);});
-
-
-		var testP = $('<div />').addClass('test-p').html(opts.testHtml);
-
-		if ( opts.lineState !== 'on' ) {
-			testP.hide();
-		}
-
-		if ( opts.grid === '12' ) {
-			buttonRadio12.attr('checked', 'checked');
-
-		} else {
-			buttonRadio16.attr('checked', 'checked');
-		}
-
-
-		buttonControls
-			.append(buttonImages)
-			.append(buttonLines)
-			.append(buttonGrid)
-			.append(labelRadio12)
-			.append(buttonRadio12)
-			.append(labelRadio16)
-			.append(buttonRadio16);
-
-		buttonDiv.append(hideLink).append(buttonControls);
-		var verticalRhythmDiv = $('<div />')
-								.attr('id', 'lit-vertical-rhythm')
-								.css({
-									'background-position' : '0 ' + opts.backgroundOffset + 'px'
-								});
-
-		if( opts.lineState !== 'on' ) {
-			verticalRhythmDiv.hide();
-		} else {
-			$(opts.selector).addClass('litLines');
-		}
-
-		$(opts.lineHeightContainer)
-			.prepend( testP)
-			.append( buttonDiv )
-			.append( verticalRhythmDiv );
-	}
-
 	$.fn.LineInTypography = function(options) {
 		// Extend our default options with those provided.
 		// Note that the first arg to extend is an empty object -
@@ -167,13 +17,12 @@
 		var opts = $.extend({}, $.fn.LineInTypography.defaults, options);
 		opts.selector = $(this).selector;
 		opts.lineHeightContainerHeight = $(opts.lineHeightContainer).height();
-		opts.lineHeight = Math.round(parseFloat($(opts.lineHeightContainer).css('line-height')));
-		
-		
+		opts.lineHeight = Math.round(
+			parseFloat(
+				$(opts.lineHeightContainer).css('line-height')
+			)
+		);
 
-
-		if ( $('#lit-button').length < 1 ) {
-			loadButtons(opts);
 			var string	=	"<style>";
 			string		+=	"#lit-buttons {";
 			string		+=		"position: fixed; top: 50px; right: 0; z-index: 200; background: #fff; padding: 15px;";
@@ -216,11 +65,7 @@
 			string		+=	"</style>";
 
 
-			$('head').append(string);
-		}
-
-
-
+			$('head').append(string);		
 		return this.each( function() {
 			var $this = $(this);
 			var width = $this.width();
@@ -238,8 +83,8 @@
 
 
 		});
-
 	};
+
 
 
 
