@@ -107,7 +107,7 @@
 				if ( !$('#litButtonOn').hasClass('off' ) ) {
 					if ( e.which == 13 ) {
 						verticalRhythm.changeLineHeight($(this).val());	
-						return false;		
+					
 					}
 				}
 				
