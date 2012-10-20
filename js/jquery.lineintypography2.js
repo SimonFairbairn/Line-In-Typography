@@ -23,15 +23,33 @@
 			)
 		);
 
+		var verticalRhythm = {}
+		verticalRhythm.id = "litLines";
+		verticalRhythm.bgPos = opts.backgroundOffset;
+		verticalRhythm.inputId = "litChangeLineHeight";
+		verticalRhythm.changeLineHeight = function( lineHeight ) {
+			$('.litLines').css({"-webkit-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
+
+			$('.litLines').css({"-moz-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
+			$('.litLines').css({"-o-background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
+			$('.litLines').css({"background-size" : parseInt(lineHeight, 10) * 2 + "px " + parseInt(lineHeight, 10) * 2 + "px"});
+			$('.litLines').css({"background-image" : "-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #ffffff), color-stop(50%, #dddddd))"});
+			$('.litLines').css({"background-image" : " -webkit-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : " -moz-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : "-o-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : "-ms-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-image" : "linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%)"});
+			$('.litLines').css({"background-position" : "0 " + verticalRhythm.bgPos + "px"});			
+		}
+
 
 		function addButton( text, id ) {
 			return $('<a />').attr('href', '#').attr('id', id).text(text);
 		}
 
+
+
 	function loadButtons(opts) {
-		var verticalRhythm = {}
-		verticalRhythm.id = "litLines";
-		verticalRhythm.bgPos = opts.backgroundOffset;
 
 		var buttonDiv = $('<div />').attr('id', 'lit-buttons');
 
@@ -41,7 +59,6 @@
 		var up = addButton('Up', 'litButtonUp');
 		up.click( function() {
 			verticalRhythm.bgPos = verticalRhythm.bgPos + 1;
-			console.log( verticalRhythm.id );
 			$('.'  + verticalRhythm.id).css(
 				{'background-position' : '0 ' + verticalRhythm.bgPos + 'px'}
 			);
@@ -50,7 +67,6 @@
 		var down = addButton('Down', 'litButtonDown');
 		down.click( function() {
 			verticalRhythm.bgPos = verticalRhythm.bgPos - 1;
-			console.log( verticalRhythm.id );
 			$('.'  + verticalRhythm.id).css(
 				{'background-position' : '0 ' + verticalRhythm.bgPos + 'px'}
 			);
@@ -69,7 +85,23 @@
 			return false;
 		});
 
-		buttonControls.append(up).append(down).append(onOff);
+		var changeLineHeight = $('<input />')
+			.attr('type', 'number')
+			.attr('name', verticalRhythm.inputId)
+			.attr('id', verticalRhythm.inputId)
+			.val(opts.lineHeight)
+			.blur(function() {
+				verticalRhythm.changeLineHeight($(this).val());	
+			})
+			.keypress( function(e) {
+				if ( e.which == 13 ) {
+					verticalRhythm.changeLineHeight($(this).val());	
+					return false;
+				}
+			});
+
+
+		buttonControls.append(up).append(down).append(onOff).append(changeLineHeight);
 		var testP = $('<div />').addClass('test-p').html(opts.testHtml);
 
 		if ( opts.lineState !== 'on' ) {
@@ -110,23 +142,13 @@
 			string		+=		"display: none !important;";
 			string		+=	"}";
 			string		+=	".litLines {";
-			string		+=		"-webkit-background-size: " + parseInt(opts.lineHeight, 10) * 2 + "px " + parseInt(opts.lineHeight, 10) * 2 + "px;";
-			string		+=		"-moz-background-size: " + parseInt(opts.lineHeight, 10) * 2 + "px " + parseInt(opts.lineHeight, 10) * 2 + "px;";
-			string		+=		"-o-background-size: " + parseInt(opts.lineHeight, 10) * 2 + "px " + parseInt(opts.lineHeight, 10) * 2 + "px;";
-			string		+=		"background-size: " + parseInt(opts.lineHeight, 10) * 2 + "px " + parseInt(opts.lineHeight, 10) * 2 + "px;";
-			string		+=		"background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #ffffff), color-stop(50%, #dddddd));";
-			string		+=		"background-image: -webkit-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%);";
-			string		+=		"background-image: -moz-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%);";
-			string		+=		"background-image: -o-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%);";
-			string		+=		"background-image: -ms-linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%);";
-			string		+=		"background-image: linear-gradient(50% 0%, #ffffff 50%, #dddddd 50%);";
-			string		+=		"background-position : 0 " + opts.backgroundOffset + "px;";
 			string		+=	"}";
-
 			string		+=	"</style>";
 
 
 			$('head').append(string);		
+			verticalRhythm.changeLineHeight(opts.lineHeight);
+
 		return this.each( function() {
 			var $this = $(this);
 			var width = $this.width();
