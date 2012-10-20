@@ -317,111 +317,129 @@ tbody tr:hover {
   background: #ddd;
   background: rgba(0, 0, 0, 0.2); }
 
-/* line 150, ../../library/sass/octopus/reset/_html5bp.scss */
-img {
-  max-width: 100%;
-  height: auto; }
-
-/* line 1, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 3, ../../library/sass/octopus/reset/_style-library-reset.scss */
 body {
-  line-height: 1.5;
+  text-shadow: none;
   font-size: 100%; }
 
-/* line 5, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 17, ../../library/sass/octopus/reset/_style-library-reset.scss */
+body, button, input, select, textarea {
+  font-family: "Georgia, serif";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #333333; }
+
+/* line 26, ../../library/sass/octopus/reset/_style-library-reset.scss */
+::-moz-selection {
+  background: red; }
+
+/* line 29, ../../library/sass/octopus/reset/_style-library-reset.scss */
+::selection {
+  background: red; }
+
+/* line 33, ../../library/sass/octopus/reset/_style-library-reset.scss */
 p, blockquote, dl, ul, ol, pre {
   margin: 0 0 1.5em; }
 
-/* line 8, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 36, ../../library/sass/octopus/reset/_style-library-reset.scss */
 hr {
   padding-top: 0;
   margin-bottom: 0; }
 
-/* line 12, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 40, ../../library/sass/octopus/reset/_style-library-reset.scss */
 pre {
   line-height: 1.5; }
 
-/* line 15, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 43, ../../library/sass/octopus/reset/_style-library-reset.scss */
 button, input {
   line-height: 1.5; }
 
-/* line 18, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 46, ../../library/sass/octopus/reset/_style-library-reset.scss */
 table {
   margin-bottom: 1.5em; }
 
-/* line 21, ../../library/sass/octopus/reset/_style-library-reset.scss */
+/* line 49, ../../library/sass/octopus/reset/_style-library-reset.scss */
 td {
   line-height: 1.5; }
 
-/*	    background-color: {$bg['bgColor']->css_rgb()};                      
-	    background-image: {$bg['image']};   
-	 background-position: {$bg['position']};                   
-	   background-repeat: {$bg['repeat']};
-	}
-	body, button, input, select, textarea {         
-	         font-family: {$fonts->get_family_css( $bodyFont['slug'] )};
-	          font-style: {$bodyFont['style']};                 
-	         font-weight: {$bodyFont['weight']};            
-	               color: {$bodyFont['color']->css_hex()};      
-	               color: {$bodyFont['color']->css_rgb(true)};
-	         text-shadow: {$bodyFont['shadow']['x']}px {$bodyFont['shadow']['y']}px {$bodyFont['shadow']['blur']}px {$bodyFont['shadow']['color']->css_rgb(true)};
-	}           
-	::-moz-selection { 
-	          background: {$link['color']->get_hex()};                        
-	}
-	::selection { 
-	          background: {$link['color']->get_hex()};                        
-	}       
-	    
-	:-moz-placeholder { color: {$greyscale['light']->get_hex()}; }                                      
-	::-webkit-input-placeholder {  color: {$greyscale['light']->get_hex()}; }                           
+/* line 53, ../../library/sass/octopus/reset/_style-library-reset.scss */
+:-moz-placeholder {
+  color: #ddd; }
 
-	*/
-/* line 9, ../sass/style.scss */
+/* line 54, ../../library/sass/octopus/reset/_style-library-reset.scss */
+::-webkit-input-placeholder {
+  color: #ddd; }
+
+/* line 56, ../../library/sass/octopus/reset/_style-library-reset.scss */
+img {
+  max-width: 100%; }
+
+/* line 12, ../sass/style.scss */
+body {
+  background: #eee;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  color: #333; }
+
+/* line 19, ../sass/style.scss */
 #wrap {
   font-size: 1em;
   /* Default 16px in browser */
   line-height: 1.5;
   margin: 0 auto;
-  width: 80%; }
+  width: 80%;
+  font-family: "Georgia", "serif"; }
 
-/* line 16, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
+table {
+  background: rgba(0, 0, 0, 0.1); }
+  /* line 29, ../sass/style.scss */
+  table tr:nth-child(2n) {
+    background: rgba(0, 0, 0, 0.2); }
+  /* line 32, ../sass/style.scss */
+  table td {
+    padding-left: 5px;
+    padding-right: 5px; }
+
+/* line 39, ../sass/style.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  font-weight: bold; }
+  font-weight: normal;
+  font-family: "Futura", "Helvetica", "sans-serif"; }
 
-/* line 22, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 h1 {
   font-size: 4.25em;
   line-height: 1.059em;
   margin-top: 24px;
   margin-bottom: 48px; }
 
-/* line 28, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 h2 {
   font-size: 2.625em;
   line-height: 1.143em;
   margin-top: 48px;
   margin-bottom: 24px; }
 
-/* line 34, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 h3 {
   font-size: 1.5em;
   line-height: 2em;
   margin-bottom: 24px; }
 
-/* line 38, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 h4, h5, h6 {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em; }
 
-/* line 43, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 .octopus-input {
   min-height: 4.5em;
   margin: 0; }
 
-/* line 47, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .octopus-textarea {
   min-height: 6em;
   margin: 0; }
