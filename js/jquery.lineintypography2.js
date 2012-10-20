@@ -58,7 +58,7 @@
 
 		var up = addButton('Up', 'litButtonUp');
 		up.click( function() {
-			verticalRhythm.bgPos = verticalRhythm.bgPos + 1;
+			verticalRhythm.bgPos = verticalRhythm.bgPos - 1;
 			$('.'  + verticalRhythm.id).css(
 				{'background-position' : '0 ' + verticalRhythm.bgPos + 'px'}
 			);
@@ -66,7 +66,7 @@
 		});
 		var down = addButton('Down', 'litButtonDown');
 		down.click( function() {
-			verticalRhythm.bgPos = verticalRhythm.bgPos - 1;
+			verticalRhythm.bgPos = verticalRhythm.bgPos + 1;
 			$('.'  + verticalRhythm.id).css(
 				{'background-position' : '0 ' + verticalRhythm.bgPos + 'px'}
 			);
@@ -75,12 +75,17 @@
 
 		var onOff = addButton('On', 'litButtonOn');
 		onOff.click( function() {
+			$('.test-p').toggle();
 			if ( $(this).hasClass('off') ) {
 				$(this).removeClass('off');
 				$(this).text('On');
+				verticalRhythm.changeLineHeight(opts.lineHeight);
+
 			} else {
 				$(this).addClass('off');
 				$(this).text('Off');
+				$('.litLines').attr('style', '');
+
 			}
 			return false;
 		});
@@ -108,15 +113,12 @@
 			testP.hide();
 		}
 
-
-
-
 		buttonDiv.append(buttonControls);
 		var verticalRhythmDiv = $('<div />')
-								.attr('id', verticalRhythm.id)
-								.css({
-									'background-position' : '0 ' + opts.backgroundOffset + 'px'
-								});
+			.attr('id', verticalRhythm.id)
+			.css({
+				'background-position' : '0 ' + opts.backgroundOffset + 'px'
+			});
 
 		if( opts.lineState !== 'on' ) {
 			verticalRhythmDiv.hide();
@@ -153,16 +155,6 @@
 			var $this = $(this);
 			var width = $this.width();
 			var maxWidth = $this.css('max-width');
-			var gridClass = false;
-			if ( opts.gridState === 'on' ) {
-				if (opts.grid === '12' ) {
-					gridClass = 'gr960-12';
-				} else {
-					gridClass = 'gr960-16';
-				}
-			}
-			$this.addClass('columns')
-			$(opts.gridContainer).addClass(gridClass);
 
 
 		});
@@ -182,7 +174,7 @@
 		grid				: '12',
 		gridState			: 'off',
 		lineState			: 'on',
-		testHtml			: "<p>Test paragraph to show line height</p><p>Test paragraph to show line height</p>",
+		testHtml			: "<p>Test paragraph to show line height</p>",
 		pluginUrl			: "js/mylibs/"
 	};
 
