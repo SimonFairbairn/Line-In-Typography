@@ -42,3 +42,9 @@ Check out `index.html` for more configuration options and to see it in action.
 ### 0.2.1
 * Added support for a 12 column, pure CSS grid
 * Fixing issue with grids and lines not playing nice
+
+### 0.3.0
+* Removed grid support, focus now purely on vertical rhythm
+* New buttons to easily move the vertical rhythm up or down
+* New box to allow the user to set arbitrary line heights
+* Style changes
