@@ -20,7 +20,7 @@ Just dump the jquery.lineintypography.min.js file in your js/ folder, link to it
 
 `jQuery('body').lineInTypography();`
 
-Check out `index.html` for more configuration options and to see it in action.
+Check out `index.html` to see it in action.
 
 ## To Do
 
@@ -47,4 +47,4 @@ Check out `index.html` for more configuration options and to see it in action.
 * Removed grid support, focus now purely on vertical rhythm
 * New buttons to easily move the vertical rhythm up or down
 * New box to allow the user to set arbitrary line heights
-* Style changes
+* Style changes. Pink. 

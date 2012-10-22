@@ -1,7 +1,7 @@
 /**
  *	Creates typographic overlays for testing line heights and grids
  *
- *	@version 0.2.0
+ *	@version 0.3.0
  *
  *	@author	Simon Fairbairn
  *

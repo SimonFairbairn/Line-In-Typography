@@ -1,407 +1,367 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>jQuery Line In Typography Test</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
-
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-
-
-
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 </head>
 
 <body>
 	<div id="wrap">
-    <header>
-		<h1>Line In Typography</h1>
-    </header>
-    <div id="main" role="main">
+		<header>
+			<h1>Line In Typography</h1>
+		</header>
+		<div id="main" role="main">
+			<h3>The Javascript</h3>
+			<p>
+				It's as easy as:<code>$( 'body' ).LineInTypography();</code>
+			</p>
+			<h3>The CSS</h3>
+			<p>The above settings would work well on a document that had the following CSS:</p>
+			<pre><code>
+		body {
+		font-size: 100%;	
+		}
 
-    	<h3>Javascript</h3>
-    	It's as easy as:
-<pre><code>
-	$( 'body' ).LineInTypography();</code></pre>
-		
-	<h3>CSS</h3>
+		#wrap {
+		font-size: 1em; /* Default 16px in browser */
+		line-height: 1.5;
+		}
+			</code></pre>
 
-		The above settings would work well on a document that had the following CSS:
+			<h2>Paragraph Alignment Tests</h2>
+			<h3>Default Paragraph</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1>Header one</h1>
+			<h2>Header two</h2>
+			<h3>Header three</h3>
+			<h4>Header four</h4>
+			<h5>Header five</h5>
+			<h6>Header six</h6>
+			<h2>Blockquote Tests</h2>
+			<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			
+			<cite>Quote Author</cite></blockquote>
+			<h2>Table Layout Test</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Header 1</th>
+						<th>Header 2</th>
+						<th>Header 3</th>
+					</tr>
+				</thead>
 
-<pre><code>
-body {
-	font-size: 100%;	
-}
+				<tbody>
+					<tr>
+						<td>Row 1, cell 1</td>
+						<td>Row 1, cell 2</td>
+						<td>Row 1, cell 3</td>
+					</tr>
+					<tr>
+						<td>Row 2, cell 1</td>
+						<td>Row 2, cell 2</td>
+						<td>Row 2, cell 3</td>
+					</tr>
+					<tr>
+						<td>Row 3, cell 1</td>
+						<td>Row 3, cell 2</td>
+						<td>Row 3, cell 3</td>
+					</tr>
+					<tr>
+						<td>Row 4, cell 1</td>
+						<td>Row 4, cell 2</td>
+						<td>Row 5, cell 3</td>
+					</tr>
 
-#wrap {
-	font-size: 1em; /* Default 16px in browser */
-	line-height: 1.5;
-}
-</code></pre>
+				</tbody>
+			</table>
+			<h2>Lists</h2>
+			<h3>Definition List</h3>
+			<dl>
+				<dt>Definition 1</dt>
+				<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+				<dt>Definition 2</dt>
+				<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
+			</dl>
 
-		<h2>Paragraph Alignment Tests</h2>
-		<h3>Default Paragraph</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<!--nextpage-->
-		<h1>Header one</h1>
-		<h2>Header two</h2>
-		<h3>Header three</h3>
-		<h4>Header four</h4>
-		<h5>Header five</h5>
-		<h6>Header six</h6>
-		<h2>Blockquote Tests</h2>
-		<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		
-		<cite>Quote Author</cite></blockquote>
-		<h2>Table Layout Test</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Header 1</th>
-					<th>Header 2</th>
-					<th>Header 3</th>
-				</tr>
-			</thead>
+			<h3>Unordered List</h3>
+			<ul>
+				<li>List item one
+			<ul>
+				<li>List item one
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+			</ul>
+			</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ul>
+			</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ul>
+			<h3>Ordered List</h3>
+			<ol>
+				<li>List item one
+			<ol>
+				<li>List item one
+			<ol>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ol>
+			</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ol>
+			</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ol>
+			<h2>HTML Element Tag Tests</h2>
+			<p>Other HTML tags:</p>
+			
+			<p><code>&lt;Address&gt;</code> tag: <address>1 Infinite Loop
+			Cupertino
+			California
+			United States</address></p>
 
-			<tbody>
-				<tr>
-					<td>Row 1, cell 1</td>
-					<td>Row 1, cell 2</td>
-					<td>Row 1, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 2, cell 1</td>
-					<td>Row 2, cell 2</td>
-					<td>Row 2, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 3, cell 1</td>
-					<td>Row 3, cell 2</td>
-					<td>Row 3, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 4, cell 1</td>
-					<td>Row 4, cell 2</td>
-					<td>Row 5, cell 3</td>
-				</tr>
+			<p><code>&lt;a&gt;</code> tag: <a href='http://example.com'>Anchor Text</a></p>
 
-			</tbody>
-		</table>
-		<h2>Lists</h2>
-		<h3>Definition List</h3>
-		<dl>
-			<dt>Definition 1</dt>
-			<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-			<dt>Definition 2</dt>
-			<dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</dd>
-		</dl>
+			<p><code>&lt;abbr&gt;</code> tag: This word is an <abbr title='abbreviation'>abbr.</a></p>
 
-		<h3>Unordered List</h3>
-		<ul>
-			<li>List item one
-		<ul>
-			<li>List item one
-		<ul>
-			<li>List item one</li>
-			<li>List item two</li>
-		</ul>
-		</li>
-			<li>List item two</li>
-			<li>List item three</li>
-			<li>List item four</li>
-		</ul>
-		</li>
-			<li>List item two</li>
-			<li>List item three</li>
-			<li>List item four</li>
-		</ul>
-		<h3>Ordered List</h3>
-		<ol>
-			<li>List item one
-		<ol>
-			<li>List item one
-		<ol>
-			<li>List item one</li>
-			<li>List item two</li>
-			<li>List item three</li>
-			<li>List item four</li>
-		</ol>
-		</li>
-			<li>List item two</li>
-			<li>List item three</li>
-			<li>List item four</li>
-		</ol>
-		</li>
-			<li>List item two</li>
-			<li>List item three</li>
-			<li>List item four</li>
-		</ol>
-		<h2>HTML Element Tag Tests</h2>
-		<p>Other HTML tags:</p>
-		
-		<p><code>&lt;Address&gt;</code> tag: <address>1 Infinite Loop
-		Cupertino
-		California
-		United States</address></p>
+			<p><code>&lt;acronym&gt;</code> tag: <acronym title="three-letter acronym">TLA</acronym></p>
 
-		<p><code>&lt;a&gt;</code> tag: <a href='http://example.com'>Anchor Text</a></p>
+			<p><code>&lt;del&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> and <code>&lt;ins&gt;</code> tags: Lorem ipsum dolor sit amet, <del>consectetur adipisicing elit</del>, sed do eiusmod
+		    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		    quis nostrud exercitation ullamco <ins>laboris nisi ut aliquip ex ea commodo</ins>
+		    consequat. <em>Duis aute irure dolor</em> in reprehenderit in voluptate velit esse
+		    cillum dolore eu fugiat nulla pariatur. <strong>Excepteur sint occaecat cupidatat</strong> non
+		    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+		    <p><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> tags: H<sub>2</sub>O or E = MC<sup>2</sup></p>
 
-		<p><code>&lt;abbr&gt;</code> tag: This word is an <abbr title='abbreviation'>abbr.</a></p>
+			<h2>Image Alignment</h2>
+			
+			<h3>Centered Image</h3>
 
-		<p><code>&lt;acronym&gt;</code> tag: <acronym title="three-letter acronym">TLA</acronym></p>
+			<p><img class='aligncenter' src='img/princess-garden-burma.jpg' alt='Princess Garden Hotel, Burma' />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<p><code>&lt;del&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> and <code>&lt;ins&gt;</code> tags: Lorem ipsum dolor sit amet, <del>consectetur adipisicing elit</del>, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco <ins>laboris nisi ut aliquip ex ea commodo</ins>
-        consequat. <em>Duis aute irure dolor</em> in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. <strong>Excepteur sint occaecat cupidatat</strong> non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
-        <p><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> tags: H<sub>2</sub>O or E = MC<sup>2</sup></p>
+			<h3>Floated Image</h3>
+			<p><img class='alignleft' src='img/princess-garden-burma.jpg' alt='Princess Garden Hotel, Burma' />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>Image Alignment</h2>
-		
-		<h3>Centered Image</h3>
+			
 
-		<p><img class='aligncenter' src='img/princess-garden-burma.jpg' alt='Princess Garden Hotel, Burma' />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h2>Forms</h2>
+			
+			<form action="./" method="post">
+				<fieldset>
+					<legend title="My Legend">My Legend</legend>
+					<p class='octopus-input'>
+						<label for="button-1">Button</label><br />
+						<input type='button' name='button-1' id='button-1' value="Button" />
+					</p>
+					<p class='octopus-input'>
+						<label for='checkbox-1'>Checkbox 1</label>
+						<input type="checkbox" value="1" name="checkbox-1" id="checkbox-1" /><br />
+						<label for='checkbox-2'>Checkbox 2</label>
+						<input type="checkbox" value="2" name="checkbox-2" id="checkbox-2" />
+						
+					</p>
+				
+					<p class='octopus-input'>
+						<label for="color-1">Color picker 1</label>
+						<br />
+						<input type="color" id="color-1" name="color-1" value="#fff" />
+					</p>
+					<p class='octopus-input'>
+						<label for="date-1">Date 1</label>
+						<br />
+						<input type="date" id="date-1" name="date-1" />
+					</p>			
+				
+					<p class='octopus-input'>
+						<label for="datetime-1">Date Time 1</label>
+						<br />
+						<input type="datetime" id="datetime-1" name="datetime-1" />
+					</p>
 
-		<h3>Floated Image</h3>
-		<p><img class='alignleft' src='img/princess-garden-burma.jpg' alt='Princess Garden Hotel, Burma' />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		
-
-		<h2>Forms</h2>
-		
-		<form action="./" method="post">
-			<fieldset>
-				<legend title="My Legend">My Legend</legend>
-				<p class='octopus-input'>
-					<label for="button-1">Button</label><br />
-					<input type='button' name='button-1' id='button-1' value="Button" />
-				</p>
-				<p class='octopus-input'>
-					<label for='checkbox-1'>Checkbox 1</label>
-					<input type="checkbox" value="1" name="checkbox-1" id="checkbox-1" /><br />
-					<label for='checkbox-2'>Checkbox 2</label>
-					<input type="checkbox" value="2" name="checkbox-2" id="checkbox-2" />
+					<p class='octopus-input'>
+						<label for="datetime-local-1">Date Time 1</label>
+						<br />
+						<input type="datetime-local" id="datetime-local-1" name="datetime-local-1" />
+					</p>
 					
-				</p>
-			
-				<p class='octopus-input'>
-					<label for="color-1">Color picker 1</label>
-					<br />
-					<input type="color" id="color-1" name="color-1" value="#fff" />
-				</p>
-				<p class='octopus-input'>
-					<label for="date-1">Date 1</label>
-					<br />
-					<input type="date" id="date-1" name="date-1" />
-				</p>			
-			
-				<p class='octopus-input'>
-					<label for="datetime-1">Date Time 1</label>
-					<br />
-					<input type="datetime" id="datetime-1" name="datetime-1" />
-				</p>
+					<p class='octopus-input'>
+						<label for="email-1">Email 1</label>
+						<br />
+						<input type="email" id="email-1" name="email-1" />
+					</p>
+					<p class='octopus-input'>
+						<label for="file-1">File 1</label>
+						<br />
+						<input type="file" id="file-1" name="file-1" />
+					</p>
+					
+					
+					<input type="hidden" name='hidden-1' value='hidden-1'>
+					
+					
+					<p class='octopus-input'>
+						<label for="month-1">Month 1</label>
+						<br />
+						<input type="month" name="month-1" id="month-1" />
+					</p>
+					<p class='octopus-input'>
+						<label for="number-1">Number 1</label>
+						<br />
+						<input type="number" name="number-1" id="number-1" min="0" max="10" step="2" value="6" />
+					</p>
+					<p class='octopus-input'>
+						<label for="password-1">password 1</label>
+						<br />
+						<input type="password" name="password-1" id="password-1" />
+					</p>
 
-				<p class='octopus-input'>
-					<label for="datetime-local-1">Date Time 1</label>
-					<br />
-					<input type="datetime-local" id="datetime-local-1" name="datetime-local-1" />
-				</p>
-				
-				<p class='octopus-input'>
-					<label for="email-1">Email 1</label>
-					<br />
-					<input type="email" id="email-1" name="email-1" />
-				</p>
-				<p class='octopus-input'>
-					<label for="file-1">File 1</label>
-					<br />
-					<input type="file" id="file-1" name="file-1" />
-				</p>
-				
-				
-				<input type="hidden" name='hidden-1' value='hidden-1'>
-				
-				
-				<p class='octopus-input'>
-					<label for="month-1">Month 1</label>
-					<br />
-					<input type="month" name="month-1" id="month-1" />
-				</p>
-				<p class='octopus-input'>
-					<label for="number-1">Number 1</label>
-					<br />
-					<input type="number" name="number-1" id="number-1" min="0" max="10" step="2" value="6" />
-				</p>
-				<p class='octopus-input'>
-					<label for="password-1">password 1</label>
-					<br />
-					<input type="password" name="password-1" id="password-1" />
-				</p>
+					<p class='octopus-input'>
+						<label for="radio-1">radio 1</label>
+						<input type="radio" name="radio-1" id="radio-1" />
+						<br />
+						<label for="radio-2">radio 1</label>
+						<input type="radio" name="radio-1" id="radio-2" />
+						<br />
+						<label for="radio-3">radio 1</label>
+						<input type="radio" name="radio-1" id="radio-3" />
+						<br />
+					</p>
 
-				<p class='octopus-input'>
-					<label for="radio-1">radio 1</label>
-					<input type="radio" name="radio-1" id="radio-1" />
-					<br />
-					<label for="radio-2">radio 1</label>
-					<input type="radio" name="radio-1" id="radio-2" />
-					<br />
-					<label for="radio-3">radio 1</label>
-					<input type="radio" name="radio-1" id="radio-3" />
-					<br />
-				</p>
+					<p class='octopus-input'>
+						<label for="range-1">Range 1</label>
+						<br />
+						<input type="range" name="range-1" id="range=1" min="0" max="10" step="2" value="6" />
+					</p>
+					
+					<p class='octopus-input'>
+						<label for="reset-1">reset 1</label>
+						<br />
+						<input type="reset" value="Reset" id="reset-1" />
+					</p>
+					<p class='octopus-input'>
+						<label for="search-1">search 1</label>
+						<br />
+						<input type="search" value="search" id="search-1" />
+					</p>
+				</fieldset>
+				<fieldset>
+					<p class='octopus-input'>
+						<label for="submit-1">submit 1</label>
+						<br />
+						<input type="submit" value="Submit" id="submit-1" name="" />
+					</p>
+					<p class='octopus-input'>
+						<label for="tel-1">Telephone 1</label>
+						<br />
+						<input type="tel" id="tel-1" name="" />
+					</p>
+					<p class='octopus-input'>
+						<label for="text-1">Text 1</label>
+						<br />
+						<input type="text" id="text-1" name="text-1" placeholder="Any Text" />
+					</p>
+					<p class='octopus-input'>
+						<label for="time-1">Time 1</label>
+						<br />
+						<input type="time" name="time-1" id="time-1" />
+					</p>
+					<p class='octopus-input'>
+						<label for="url-1">URL 1</label>
+						<br />
+						<input type="url" name="url-1" id="url-1" placeholder="URL" />
+					</p>
+					<p class='octopus-input'>
+						<label for="week-1">Week 1</label>
+						<br />
+						<input type="week" name="week-1" id="week-1" />
+					</p>
+					<p class='octopus-textarea'>
+						<label for='textarea-1'>Textarea 1</label>
+						<textarea name='textarea-1' id='textarea-1'></textarea>
+					</p>
+					<p class='octopus-input'>
+						<label for='select-1'>Select 1</label>
 
-				<p class='octopus-input'>
-					<label for="range-1">Range 1</label>
-					<br />
-					<input type="range" name="range-1" id="range=1" min="0" max="10" step="2" value="6" />
-				</p>
-				
-				<p class='octopus-input'>
-					<label for="reset-1">reset 1</label>
-					<br />
-					<input type="reset" value="Reset" id="reset-1" />
-				</p>
-				<p class='octopus-input'>
-					<label for="search-1">search 1</label>
-					<br />
-					<input type="search" value="search" id="search-1" />
-				</p>
-			</fieldset>
-			<fieldset>
-				<p class='octopus-input'>
-					<label for="submit-1">submit 1</label>
-					<br />
-					<input type="submit" value="Submit" id="submit-1" name="" />
-				</p>
-				<p class='octopus-input'>
-					<label for="tel-1">Telephone 1</label>
-					<br />
-					<input type="tel" id="tel-1" name="" />
-				</p>
-				<p class='octopus-input'>
-					<label for="text-1">Text 1</label>
-					<br />
-					<input type="text" id="text-1" name="text-1" placeholder="Any Text" />
-				</p>
-				<p class='octopus-input'>
-					<label for="time-1">Time 1</label>
-					<br />
-					<input type="time" name="time-1" id="time-1" />
-				</p>
-				<p class='octopus-input'>
-					<label for="url-1">URL 1</label>
-					<br />
-					<input type="url" name="url-1" id="url-1" placeholder="URL" />
-				</p>
-				<p class='octopus-input'>
-					<label for="week-1">Week 1</label>
-					<br />
-					<input type="week" name="week-1" id="week-1" />
-				</p>
-				<p class='octopus-textarea'>
-					<label for='textarea-1'>Textarea 1</label>
-					<textarea name='textarea-1' id='textarea-1'></textarea>
-				</p>
-				<p class='octopus-input'>
-					<label for='select-1'>Select 1</label>
-
-					<select name="select-1" id="select-1">
-						<optgroup class="optgroup-1">
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
-							<option value="4">Option 4</option>
-							<option value="5">Option 5</option>
-						</optgroup>
-						<optgroup class="optgroup-2">
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
-							<option value="4">Option 4</option>
-							<option value="5">Option 5</option>
-						</optgroup>
-					</select>
-				</p>								
-		
-			</fieldset>
-			
-		
-		</form>
-
-
-    </div>
-    
-    <footer>
-    	<ul>
-    		<li><a href="">Link 1</a></li>
-    		<li><a href="">Link 2</a></li>
-    		<li><a href="">Link 3</a></li>
-    	</ul>
-    	<p>&copy; Copyright info</p>
-    </footer>
-  </div> <!--! end of #container -->
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="js/libs/jquery.min.js"></script>
-
-  <!-- scripts concatenated and minified via ant build script-->
+						<select name="select-1" id="select-1">
+							<optgroup class="optgroup-1">
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+								<option value="4">Option 4</option>
+								<option value="5">Option 5</option>
+							</optgroup>
+							<optgroup class="optgroup-2">
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+								<option value="4">Option 4</option>
+								<option value="5">Option 5</option>
+							</optgroup>
+						</select>
+					</p>								
+				</fieldset>
+			</form>
+		</div>
+		<footer>
+			<ul>
+				<li><a href="">Link 1</a></li>
+				<li><a href="">Link 2</a></li>
+				<li><a href="">Link 3</a></li>
+			</ul>
+			<p>&copy; Copyright info</p>
+		</footer>
+	</div> <!--! end of #container -->
+	<script src="js/libs/jquery.min.js"></script>
 	<script src="js/jquery.lineintypography.min.js"></script>
-  <!-- end scripts-->
     <script>
-    jQuery(document).ready(function($) {
-
-
-        $( 'body' ).LineInTypography();
-    });
-  </script>
+    	jQuery(document).ready(function($) {
+        	$( 'body' ).LineInTypography();
+		});
+	</script>
  
   
 </body>
