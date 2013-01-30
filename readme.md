@@ -48,3 +48,6 @@ Check out `index.html` to see it in action.
 * New buttons to easily move the vertical rhythm up or down
 * New box to allow the user to set arbitrary line heights
 * Style changes. Pink. 
+
+### 0.3.1
+* Added option to set default lineHeight, overriding automatic detection

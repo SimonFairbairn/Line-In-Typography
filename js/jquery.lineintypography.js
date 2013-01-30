@@ -1,7 +1,7 @@
 /**
  *	Creates typographic overlays for testing line heights and grids
  *
- *	@version 0.3.0
+ *	@version 0.3.1
  *
  *	@author	Simon Fairbairn
  *
@@ -18,11 +18,16 @@
 		var opts = $.extend({}, $.fn.LineInTypography.defaults, options);
 		opts.selector = $(this).selector;
 		opts.lineHeightContainerHeight = $(opts.lineHeightContainer).height();
-		opts.lineHeight = Math.round(
-			parseFloat(
-				$(opts.lineHeightContainer).css('line-height')
-			)
-		);
+		if ( opts.defaultLineHeight !== false ) {
+			opts.lineHeight = parseInt( opts.defaultLineHeight );
+		} else {
+			opts.lineHeight = Math.round(
+				parseFloat(
+					$(opts.lineHeightContainer).css('line-height')
+				)
+			);
+
+		}
 
 		var verticalRhythm = {}
 		verticalRhythm.id = "litLines";
@@ -208,7 +213,8 @@
 		gridState			: 'off',
 		lineState			: 'on',
 		testHtml			: "<p>Test paragraph to show line height</p>",
-		pluginUrl			: "js/mylibs/"
+		pluginUrl			: "js/mylibs/",
+		defaultLineHeight	: false
 	};
 
 })(jQuery);
